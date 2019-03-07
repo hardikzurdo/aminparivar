@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+  {% block content %}
+    <div class= "post">
+
+          <h2>{{ post.title }}</h2>
+          <p>{{ post.text|linebreaksbr }}</p>
+          <p>Published date: {{post.published_date }}</p>
+          <p>Author  :{{post.author}}</p>
+          <a href="{% url 'post_list'%}">Back to home page</a>
+      </div>
+
+  {% endblock %}
