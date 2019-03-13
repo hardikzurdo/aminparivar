@@ -13,20 +13,18 @@
     <div class="page-header">
 
       {% if user.is_authenticated %}
-        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        <a href="{% url 'logout' %}" class="top-menu"><span class="glyphicon glyphicon-off"></span></a>
         <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        <h2>Hello {{ user.username }}</h2>
           {% else %}
-            <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-log-in"></span></a>
+        <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-log-in"></span></a>
       {% endif %}
-        <h1><a href="{% url 'post_list'%}">Amin Parivar Blogs</a></h1>
-        {% if user.is_authenticated %}
-
-        <h5>Welcome {{user}} </h5>
-
-        {% endif %}
-
-    </div>
+      <h1><a href="{% url 'post_list'%}">Amin Parivar Blogs</a></h1>
+  </div>
+ 
     <div class="content container">
+
         <div class="row">
             <div class="col-md-8">
 
