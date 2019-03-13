@@ -10,7 +10,7 @@
                         <p>Published date: {{ post.published_date }}</p>
                         <p>Published by  : {{ post.author }}</p>
                     </div>
-                    <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved.count }}</a>
+                    <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
                 </div>
             {% endfor %}
           {% endblock %}

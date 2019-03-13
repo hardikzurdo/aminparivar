@@ -7,16 +7,15 @@
       {% if user.is_authenticated and user == post.author%}
 
       <div class="post">
-
-          <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <a class="top-menu" ><span class="glyphicon glyphicon-trash"></span></a>
-            <a href="{% url 'post_edit' pk=post.pk %}" class="top-menu" ><span class="glyphicon glyphicon-edit"></span></a>
-
+          <p class="date"></p>
+          <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
           <p>{{ post.text|truncatechars:200 }}</p>
-          <p>created: {{ post.created_date|date:'d-m-Y'}}</p>
+          <p>created: {{ post.created_date|date:'d-m-Y' }}</p>
 
 
-            <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
+            <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}"><span class="glyphicon glyphicon-plane"> Publish</a>
+            <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-edit"> Edit</a>
+            <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-trash"> Delete</span></a>
 
       </div>
       {% endif %}
